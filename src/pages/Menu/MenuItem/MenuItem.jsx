@@ -17,7 +17,7 @@ const MenuItem = (props) => {
 
   return (
     <li key={id} className="pizza">
-      <img src={imageUrl} className="pizza__image" alt={name} />
+      <img src={imageUrl} className={!soldOut? "pizza__image" : "pizza__image pizza__image--mod"} alt={name} />
       <div className="pizza__info">
         <p className="pizza__name">{name}</p>
         <p className="pizza__ingredients">{ingredients.join(", ")}</p>

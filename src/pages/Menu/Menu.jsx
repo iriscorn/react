@@ -12,7 +12,7 @@ const Menu = () => {
         );
 
         if (!response.ok) throw new Error("Failed to fetch");
-        
+
         const data = await response.json();
         setData(data.data);
       } catch (err) {
@@ -23,18 +23,27 @@ const Menu = () => {
     getData();
   }, []);
 
-  return data.map((pizza) => {
-    return (
-      <MenuItem
-        soldOut={pizza.soldOut}
-        price={pizza.unitPrice}
-        key={pizza.id}
-        imageUrl={pizza.imageUrl}
-        name={pizza.name}
-        ingredients={pizza.ingredients}
-      />
-    );
-  });
+  return (
+    <>
+      <main>
+        <ul>
+          {data.map((pizza) => {
+            return (
+              <MenuItem
+                soldOut={pizza.soldOut}
+                price={pizza.unitPrice}
+                key={pizza.id}
+                imageUrl={pizza.imageUrl}
+                name={pizza.name}
+                ingredients={pizza.ingredients}
+              />
+            );
+          })}
+          ;
+        </ul>
+      </main>
+    </>
+  );
 };
 
 export default Menu;
