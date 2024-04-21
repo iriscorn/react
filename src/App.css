@@ -84,3 +84,14 @@ ul {
   font-size: 14px;
   text-transform: uppercase;
 }
+
+.pizza__count {
+  display: flex;
+  gap: 20px;
+}
+
+.pizza__buttons-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}

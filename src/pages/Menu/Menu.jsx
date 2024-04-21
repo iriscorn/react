@@ -206,14 +206,14 @@ const pizzas = [
 const Menu = () => {
   return pizzas.map((pizza) => {
     return (
-      <li key={pizza.id} className="pizza">
-        <img src={pizza.imageUrl} className="pizza__image" alt={pizza.name} />
-        <div className="pizza__info">
-          <p className="pizza__name">{pizza.name}</p>
-          <p className="pizza__ingredients">{pizza.ingredients.join(", ")}</p>
-          <MenuItem soldOut={pizza.soldOut} price={pizza.unitPrice} />
-        </div>
-      </li>
+      <MenuItem
+        soldOut={pizza.soldOut}
+        price={pizza.unitPrice}
+        key={pizza.id}
+        imageUrl={pizza.imageUrl}
+        name={pizza.name}
+        ingredients={pizza.ingredients}
+      />
     );
   });
 };
