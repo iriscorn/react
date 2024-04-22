@@ -4,7 +4,7 @@ const Users = () => {
   const { data, isLoading, error } = useFetch(
     "https://jsonplaceholder.typicode.com/users"
   );
-
+  console.log(data);
   return (
     <>
     <main className="content">
