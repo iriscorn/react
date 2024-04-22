@@ -1,8 +1,13 @@
+.background {
+  background-color: #F1F5F9;
+}
+
 .text-yellow {
   color: rgb(234 179 8);
 }
 
 button {
+  width: fit-content;
   font-family: Roboto Mono, monospace;
   border: 0;
   padding: 10px 15px;
@@ -139,4 +144,40 @@ input:focus {
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.order-content {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.order-content form {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.order-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-label--mod {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 5px;
+}
+
+.order-input {
+  width: 80%;
+}
+
+.order-heading {
+  text-align: start;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 20px;
 }
