@@ -19,7 +19,6 @@ const Menu = () => {
         console.log(err.message);
       }
     };
-
     getData();
   }, []);
 
@@ -39,7 +38,6 @@ const Menu = () => {
               />
             );
           })}
-          ;
         </ul>
       </main>
     </>
