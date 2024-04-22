@@ -1,32 +1,18 @@
 import MenuItem from "./MenuItem/MenuItem";
-import { useEffect, useState } from "react";
+import useFetch from "../../hooks/useFetch";
 
 const Menu = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch(
-          "https://react-fast-pizza-api.onrender.com/api/menu"
-        );
-
-        if (!response.ok) throw new Error("Failed to fetch");
-
-        const data = await response.json();
-        setData(data.data);
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
-    getData();
-  }, []);
-
+  const { data, isLoading, error } = useFetch(
+    "https://react-fast-pizza-api.onrender.com/api/menu"
+  );
+  
   return (
     <>
       <main>
+        {error && <p>{error}</p>}
+        {isLoading && <h2>Loading ...</h2>}
         <ul>
-          {data.map((pizza) => {
+          {!!data.data.length && data.data.map((pizza) => {
             return (
               <MenuItem
                 soldOut={pizza.soldOut}
